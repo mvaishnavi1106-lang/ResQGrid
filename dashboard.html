@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RESQGRID | Command Center</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Leaflet Map CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            RESQ<span>GRID</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Command Center</a>
+            <a href="citizen.html">Check My Risk</a>
+        </div>
+
+    </nav>
+
+
+    <!-- DASHBOARD HEADER -->
+
+    <main class="dashboard">
+
+        <div class="dashboard-header">
+
+            <div>
+                <p class="page-label">EMERGENCY MANAGEMENT</p>
+
+                <h1>Command Center</h1>
+
+                <p class="dashboard-subtitle">
+                    Real-time disaster monitoring and smart
+                    emergency resource allocation.
+                </p>
+            </div>
+
+            <div class="system-status">
+                <span class="live-dot"></span>
+                System Operational
+            </div>
+
+        </div>
+
+
+        <!-- STAT CARDS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">⚠️</div>
+
+                <div>
+                    <p>Active Alerts</p>
+                    <h2 id="activeAlerts">04</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🔴</div>
+
+                <div>
+                    <p>Critical Zones</p>
+                    <h2 id="criticalZones">02</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🚑</div>
+
+                <div>
+                    <p>Ambulances</p>
+                    <h2 id="ambulanceCount">18</h2>
+                </div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-icon">🏠</div>
+
+                <div>
+                    <p>Shelter Capacity</p>
+                    <h2>76%</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- MAP + RISK PANEL -->
+
+        <div class="dashboard-grid">
+
+            <!-- MAP -->
+
+            <div class="panel map-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Disaster Impact Map</h2>
+
+                        <p>
+                            Monitor affected and high-risk zones
+                        </p>
+                    </div>
+
+                    <select id="disasterFilter">
+
+                        <option value="all">
+                            All Disasters
+                        </option>
+
+                        <option value="flood">
+                            Flood
+                        </option>
+
+                        <option value="earthquake">
+                            Earthquake
+                        </option>
+                        <option value="heavy_rain">
+    Heavy Rain
+</option>
+
+                    </select>
+
+                </div>
+
+                <div id="dashboardMap"></div>
+
+            </div>
+
+
+            <!-- RISK ZONES -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Priority Zones</h2>
+
+                        <p>
+                            Current disaster risk levels
+                        </p>
+                    </div>
+
+                </div>
+
+
+            <div class="risk-list" id="riskList">
+
+    <div class="risk-item">
+
+        <div>
+            <strong>Loading...</strong>
+            <p>Fetching zone data</p>
+        </div>
+
+        <div class="risk-score">
+            --
+        </div>
+
+    </div>
+
+</div>   
+
+            </div>
+
+        </div>
+        <!-- DISASTER SIMULATION -->
+
+<div class="panel simulation-panel">
+
+    <div class="panel-header">
+
+        <div>
+            <p class="page-label">LIVE DEMONSTRATION</p>
+
+            <h2>Disaster Simulation</h2>
+
+            <p>
+                Simulate an emergency event and observe
+                how RESQGRID prioritizes response.
+            </p>
+        </div>
+
+        <div class="simulation-status" id="simulationStatus">
+            System Ready
+        </div>
+
+    </div>
+
+
+    <div class="simulation-buttons">
+        <button id="floodSimulation" class="simulation-btn flood-btn">
+            🌧️ Simulate Flood
+        </button>
+        
+        <button id="earthquakeSimulation" class="simulation-btn earthquake-btn">
+            🌍 Simulate Earthquake
+        </button>
+        <button id="heavyRainSimulation" class="simulation-btn rain-btn">
+    🌧️ Simulate Heavy Rain
+</button>
+        <button id="resetSimulation" class="simulation-btn reset-btn">
+            ↻ Reset
+        </button>
+
+    </div>
+
+
+    <div id="simulationResult" class="simulation-result">
+
+        <div class="simulation-icon">
+            ⚡
+        </div>
+
+        <div>
+
+            <h3>Ready for Simulation</h3>
+
+            <p>
+                Select a disaster scenario to see how
+                the system responds.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- RESOURCE ALLOCATION -->
+
+        <div class="panel resource-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2>Smart Resource Allocation</h2>
+
+                    <p>
+                        Recommended emergency deployment
+                        based on current risk levels.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+
+    <span class="resource-icon">🚑</span>
+
+    <div>
+        <h3>Ambulances</h3>
+        <p id="ambulancesAvailable">Available: 16</p>
+    </div>
+
+    <strong id="ambulancesRequired">12 Required</strong>
+
+</div>
+
+
+                <div class="resource-card">
+
+    <span class="resource-icon">🧑‍🚒</span>
+
+    <div>
+        <h3>Rescue Teams</h3>
+        <p id="rescueAvailable">Available: 8</p>
+    </div>
+
+    <strong id="rescueRequired">05 Required</strong>
+
+</div> 
+
+
+                <div class="resource-card">
+
+                    <span class="resource-icon">🏠</span>
+
+                    <div>
+                        <h3>Shelters</h3>
+                        <p id="sheltersAvailable">Available: 4</p> 
+                    </div>
+
+                    <strong id="sheltersActivated">1320 Spaces Available</strong>
+
+                </div>
+
+
+                <div class="resource-card">
+
+                    <span class="resource-icon">📦</span>
+
+                    <div>
+                        <h3>Relief Kits</h3>
+                        <p id="reliefAvailable">Available: 1500</p>
+                    </div>
+
+                    <strong id="reliefRequired">1365 Required</strong> 
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI RECOMMENDATION -->
+
+        <div class="recommendation">
+
+            <div class="recommendation-icon">
+                💡
+            </div>
+
+            <div>
+
+                <h2>AI Response Recommendation</h2>
+
+                <p id="aiRecommendation">
+    Zone C has been assigned the highest priority
+    because of its high population exposure,
+    critical risk score and poor road accessibility.
+    Deploy additional ambulances and rescue teams
+    to this zone.
+</p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Leaflet JavaScript - LOAD ONLY ONCE -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- RESQGRID JavaScript -->
+
+    <script src="js/map.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

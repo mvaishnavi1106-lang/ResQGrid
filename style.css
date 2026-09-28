@@ -1,0 +1,1188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    border-bottom: 1px solid #e5e8ef;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 9%;
+    background: linear-gradient(135deg, #eef4ff, #ffffff);
+}
+
+.hero-content {
+    width: 55%;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #5b6474;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-btn,
+.secondary-btn {
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.primary-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary-btn {
+    background: white;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+}
+
+
+/* STATUS CARD */
+
+.hero-visual {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+}
+
+.status-card {
+    width: 320px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.status-header {
+    color: #15803d;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.status-card h3 {
+    margin-bottom: 25px;
+}
+
+.mini-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.mini-stat span {
+    color: #6b7280;
+}
+
+.mini-stat strong {
+    color: #172033;
+}
+
+
+/* FEATURES */
+
+.features {
+    padding: 70px 8%;
+    text-align: center;
+    background: white;
+}
+
+.features h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card {
+    text-align: left;
+    padding: 25px;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.feature-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #111827;
+    color: #d1d5db;
+    font-size: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero-visual {
+        width: 100%;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 50px 25px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================================
+   COMMAND CENTER
+================================ */
+
+.dashboard {
+    padding: 45px 6%;
+    background: #f5f7fb;
+    min-height: calc(100vh - 70px);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-label {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.dashboard-header h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+    color: #6b7280;
+}
+
+.system-status {
+    background: white;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+
+/* STAT CARDS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e5e7eb;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #eef4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+.stat-card p {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.stat-card h2 {
+    font-size: 25px;
+}
+
+
+/* PANELS */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.panel {
+    background: white;
+    border-radius: 15px;
+    padding: 22px;
+    border: 1px solid #e5e7eb;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.panel-header h2 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.panel-header p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.panel-header select {
+    padding: 9px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+}
+
+
+/* MAP */
+
+#dashboardMap {
+    height: 450px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+/* RISK LIST */
+
+.risk-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.risk-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 17px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.risk-item strong {
+    font-size: 15px;
+}
+
+.risk-item p {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.risk-score {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.critical {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.high {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+.moderate {
+    background: #fef3c7;
+    color: #ca8a04;
+}
+
+.low {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+/* RESOURCES */
+
+.resource-panel {
+    margin-bottom: 20px;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.resource-card {
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+}
+
+.resource-icon {
+    font-size: 27px;
+}
+
+.resource-card h3 {
+    font-size: 14px;
+}
+
+.resource-card p {
+    color: #6b7280;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.resource-card strong {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    color: #2563eb;
+    font-size: 13px;
+}
+
+
+/* RECOMMENDATION */
+
+.recommendation {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 22px;
+    border-radius: 14px;
+}
+
+.recommendation-icon {
+    font-size: 28px;
+}
+
+.recommendation h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.recommendation p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+
+/* DASHBOARD RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dashboard {
+        padding: 30px 20px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* =========================================
+   RESQGRID - CITIZEN RISK PAGE
+   ========================================= */
+
+.citizen-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 30px 80px;
+}
+
+.citizen-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.citizen-header h1 {
+    font-size: 42px;
+    margin: 8px 0 12px;
+}
+
+.citizen-header > p:last-child {
+    color: #667085;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* LOCATION + SAFETY */
+
+.citizen-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* PANELS */
+
+.location-panel,
+.safety-panel,
+.risk-result {
+    background: #ffffff;
+    border: 1px solid #e7e9ee;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(16, 24, 40, 0.06);
+}
+
+.location-panel .panel-header {
+    margin-bottom: 22px;
+}
+
+
+/* LOCATION INPUT */
+
+.location-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.location-input input {
+    flex: 1;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid #d0d5dd;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+.location-input input:focus {
+    border-color: #1f6feb;
+}
+
+.location-input button {
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background: #1f6feb;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.location-input button:hover {
+    background: #1557b0;
+}
+
+
+/* LOCATION SUGGESTIONS */
+
+.location-suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 22px;
+}
+
+.location-btn {
+    padding: 8px 14px;
+    border: 1px solid #d0d5dd;
+    background: #f8f9fb;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #344054;
+}
+
+.location-btn:hover {
+    background: #eef4ff;
+    border-color: #1f6feb;
+}
+
+
+/* SELECTED LOCATION */
+
+.selected-location {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #eaecf0;
+}
+
+.selected-location > span {
+    font-size: 25px;
+}
+
+.selected-location p {
+    margin: 0 0 4px;
+    font-size: 12px;
+    color: #667085;
+}
+
+.selected-location strong {
+    font-size: 16px;
+    color: #101828;
+}
+
+
+/* CHECK RISK BUTTON */
+
+.check-risk-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 11px;
+    background: #101828;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.check-risk-btn:hover {
+    background: #1d2939;
+}
+
+
+/* SAFETY PANEL */
+
+.safety-panel h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+.safety-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 13px 0;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.safety-item:last-child {
+    border-bottom: none;
+}
+
+.safety-item > span {
+    font-size: 23px;
+}
+
+.safety-item strong {
+    font-size: 14px;
+    color: #101828;
+}
+
+.safety-item p {
+    margin: 4px 0 0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* RISK RESULT */
+
+.risk-result {
+    margin-top: 5px;
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.result-header h2 {
+    margin: 5px 0 0;
+    font-size: 24px;
+}
+
+.risk-badge {
+    min-width: 105px;
+    padding: 9px 16px;
+    text-align: center;
+    border-radius: 20px;
+    background: #f2f4f7;
+    color: #667085;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* RISK SCORE */
+
+.risk-score-container {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 28px 0;
+}
+
+.risk-score-container > div:first-child {
+    text-align: center;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 15px;
+}
+
+.risk-score-container p {
+    margin: 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.risk-score-container h1 {
+    font-size: 58px;
+    margin: 5px 0 0;
+    line-height: 1;
+}
+
+.risk-score-container span {
+    color: #98a2b3;
+    font-size: 12px;
+}
+
+.risk-description {
+    padding: 10px;
+}
+
+.risk-description p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #475467;
+}
+
+
+/* RISK FACTORS */
+
+.risk-factors {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.factor-card {
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #eaecf0;
+    border-radius: 13px;
+}
+
+.factor-card span {
+    font-size: 21px;
+}
+
+.factor-card p {
+    margin: 10px 0 5px;
+    color: #667085;
+    font-size: 12px;
+}
+
+.factor-card strong {
+    font-size: 18px;
+    color: #101828;
+}
+
+
+/* EMERGENCY INFORMATION */
+
+.emergency-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.emergency-info p {
+    margin: 0 0 7px;
+    color: #667085;
+    font-size: 12px;
+}
+
+.emergency-info strong {
+    font-size: 15px;
+    color: #101828;
+}
+
+
+/* RECOMMENDATION */
+
+.citizen-recommendation {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    background: #f8fafc;
+    border-left: 4px solid #1f6feb;
+    border-radius: 10px;
+}
+
+.citizen-recommendation > span {
+    font-size: 23px;
+}
+
+.citizen-recommendation h3 {
+    margin: 0 0 6px;
+    font-size: 15px;
+}
+
+.citizen-recommendation p {
+    margin: 0;
+    color: #475467;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .citizen-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .risk-factors {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .emergency-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .risk-score-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .citizen-page {
+        padding: 35px 16px 50px;
+    }
+
+    .citizen-header h1 {
+        font-size: 32px;
+    }
+
+    .location-input {
+        flex-direction: column;
+    }
+
+    .location-input button {
+        width: 100%;
+        height: 45px;
+    }
+
+    .risk-factors,
+    .emergency-info {
+        grid-template-columns: 1fr;
+    }
+
+    .result-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+/* =========================================
+   DISASTER SIMULATION
+   ========================================= */
+
+.simulation-panel {
+    margin-top: 25px;
+}
+
+.simulation-status {
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #ecfdf3;
+    color: #027a48;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.simulation-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+    flex-wrap: wrap;
+}
+
+.simulation-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.flood-btn {
+    background: #eaf2ff;
+    color: #175cd3;
+}
+
+.flood-btn:hover {
+    background: #d9e8ff;
+}
+
+.earthquake-btn {
+    background: #fef3f2;
+    color: #b42318;
+}
+
+.earthquake-btn:hover {
+    background: #fee4e2;
+}
+
+.reset-btn {
+    background: #f2f4f7;
+    color: #344054;
+}
+
+.reset-btn:hover {
+    background: #e4e7ec;
+}
+
+.simulation-result {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #eaecf0;
+}
+
+.simulation-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #ffffff;
+    font-size: 22px;
+}
+
+.simulation-result h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+}
+
+.simulation-result p {
+    margin: 0;
+    color: #667085;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+
+    .simulation-buttons {
+        flex-direction: column;
+    }
+
+    .simulation-btn {
+        width: 100%;
+    }
+}
+/* HEAVY RAIN SIMULATION */
+
+.rain-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.rain-btn:hover {
+    background: #1d4ed8;
+}
+/* ==========================================
+   CITIZEN INTERACTIVE MAP
+   ========================================== */
+
+/* ==========================================
+   CITIZEN INTERACTIVE MAP
+   ========================================== */
+
+#citizenMap {
+    width: 100%;
+    height: 500px;
+    min-height: 500px;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border: 2px solid #d9d9d9;
+
+    background: #e8e8e8;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+#citizenMap .leaflet-container {
+    width: 100%;
+    height: 100%;
+
+    min-height: 500px;
+
+    border-radius: 13px;
+}
+
+
+/* Leaflet controls should stay above the map */
+
+#citizenMap .leaflet-control {
+    z-index: 1000;
+}
+
+
+/* Selected coordinates */
+
+#selectedCoordinates {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+/* Check Risk button */
+
+.check-risk-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+/* RESQGRID MAP */
+
+#dashboardMap {
+    width: 100%;
+    height: 450px;
+    min-height: 450px;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+}

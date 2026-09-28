@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RESQGRID | Check My Risk</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            RESQ<span>GRID</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Command Center</a>
+            <a href="citizen.html">Check My Risk</a>
+        </div>
+
+    </nav>
+
+
+    <!-- CITIZEN RISK PAGE -->
+
+    <main class="citizen-page">
+
+        <div class="citizen-header">
+
+            <p class="page-label">CITIZEN SAFETY</p>
+
+            <h1>Check My Risk</h1>
+
+            <p>
+                Select your location and disaster type to
+                understand the risk and recommended safety actions.
+            </p>
+
+        </div>
+
+
+        <!-- LOCATION SELECTION -->
+
+        <div class="citizen-grid">
+
+            <!-- LOCATION PANEL -->
+
+            <div class="panel location-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>Select Your Location</h2>
+
+                        <p>
+                            Click anywhere on the map to select your location.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INTERACTIVE MAP -->
+
+                <div id="citizenMap"></div>
+
+
+                <!-- SELECTED LOCATION -->
+
+                <div class="selected-location">
+
+                    <span>📍</span>
+
+                    <div>
+
+                        <p>Selected Location</p>
+
+                        <strong id="selectedLocation">
+                            Click on the map to select a location
+                        </strong>
+
+                        <small id="selectedCoordinates">
+                            Latitude: — | Longitude: —
+                        </small>
+
+
+                        <!-- DISASTER SELECTION -->
+
+                        <div class="disaster-selection">
+
+                            <label for="disasterType">
+                                Select Disaster Type
+                            </label>
+
+                            <select id="disasterType">
+
+                                <option value="Flood">
+                                    🌊 Flood
+                                </option>
+
+                                <option value="Heavy Rain">
+                                    🌧️ Heavy Rain
+                                </option>
+
+                                <option value="Earthquake">
+                                    🌎 Earthquake
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SINGLE CHECK BUTTON -->
+
+                        <button id="checkRiskBtn"
+                                class="check-risk-btn">
+                            Check My Risk
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SAFETY INFORMATION -->
+
+            <div class="panel safety-panel">
+
+                <h2>How RESQGRID Helps</h2>
+
+
+                <div class="safety-item">
+
+                    <span>🌧️</span>
+
+                    <div>
+
+                        <strong>Flood Risk</strong>
+
+                        <p>
+                            Analyses rainfall, water level and
+                            environmental conditions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-item">
+
+                    <span>🌧️</span>
+
+                    <div>
+
+                        <strong>Heavy Rain Risk</strong>
+
+                        <p>
+                            Evaluates rainfall intensity and
+                            potential population impact.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-item">
+
+                    <span>🌍</span>
+
+                    <div>
+
+                        <strong>Earthquake Impact</strong>
+
+                        <p>
+                            Estimates potential impact based on
+                            earthquake intensity and location.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-item">
+
+                    <span>👥</span>
+
+                    <div>
+
+                        <strong>Population Exposure</strong>
+
+                        <p>
+                            Identifies the number of people
+                            potentially affected.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="safety-item">
+
+                    <span>🚑</span>
+
+                    <div>
+
+                        <strong>Emergency Support</strong>
+
+                        <p>
+                            Provides nearby shelter and emergency
+                            resource recommendations.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RISK RESULT -->
+
+        <div id="riskResult" class="panel risk-result">
+
+            <div class="result-header">
+
+                <div>
+
+                    <p class="page-label">
+                        RISK ASSESSMENT
+                    </p>
+
+                    <h2 id="resultLocation">
+                        Risk Assessment
+                    </h2>
+
+                </div>
+
+                <div id="riskBadge"
+                     class="risk-badge">
+                    —
+                </div>
+
+            </div>
+
+
+            <!-- RISK SCORE -->
+
+            <div class="risk-score-container">
+
+                <div>
+
+                    <p id="selectedDisasterLabel">
+                        Overall Risk Score
+                    </p>
+
+                    <h1 id="riskScore">
+                        —
+                    </h1>
+
+                    <span>out of 100</span>
+
+                </div>
+
+                <div class="risk-description">
+
+                    <p id="riskMessage">
+                        Select your location and disaster type,
+                        then click "Check My Risk".
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RISK FACTORS -->
+
+            <div class="risk-factors">
+
+                <!-- SELECTED DISASTER -->
+
+                <div class="factor-card">
+
+                    <span id="disasterIcon">
+                        ⚠️
+                    </span>
+
+                    <p id="disasterRiskLabel">
+                        Disaster Risk
+                    </p>
+
+                    <strong id="selectedDisasterRisk">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- POPULATION -->
+
+                <div class="factor-card">
+
+                    <span>👥</span>
+
+                    <p>Population Exposure</p>
+
+                    <strong id="populationExposure">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- ROAD ACCESS -->
+
+                <div class="factor-card">
+
+                    <span>🛣️</span>
+
+                    <p>Road Accessibility</p>
+
+                    <strong id="roadAccess">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <!-- RAINFALL -->
+
+                <div class="factor-card">
+
+                    <span>🌧️</span>
+
+                    <p id="rainfallLabel">
+                        Rainfall</p>
+
+                    <strong id="rainfallValue">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMERGENCY INFORMATION -->
+
+            <div class="emergency-info">
+
+                <div>
+
+                    <p>🏠 Nearest Shelter</p>
+
+                    <strong id="nearestShelter">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <p>🚑 Recommended Ambulances</p>
+
+                    <strong id="ambulances">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <p>🧑‍🚒 Rescue Teams</p>
+
+                    <strong id="rescueTeams">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <p>📦 Relief Kits</p>
+
+                    <strong id="reliefKits">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOMMENDED ACTION -->
+
+            <div class="citizen-recommendation">
+
+                <span>💡</span>
+
+                <div>
+
+                    <h3>Recommended Action</h3>
+
+                    <p id="recommendation">
+                        Your personalized safety recommendation
+                        will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- LEAFLET -->
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- CITIZEN JAVASCRIPT -->
+
+    <script src="js/citizen.js"></script>
+
+</body>
+
+</html>
