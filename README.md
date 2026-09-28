@@ -363,6 +363,16 @@ View Recommendation
 
 ---
 
+
+## Output demo video
+## 🎥 Output / Demo
+
+[▶️ Watch ResQGrid Demo Video](https://drive.google.com/drive/folders/1zhx_fGmyTvAbgtFGhsB7CW41w2nYAgkf?usp=sharing)
+
+
+
+
+---
 ## 📊 Example Priority Zones
 
 The prototype contains sample disaster-zone data to demonstrate prioritization.
